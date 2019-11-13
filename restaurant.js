@@ -1,5 +1,5 @@
 var lat = latResults;
-var lon = lonResults;
+var lon = lngResults;
 
 $("#search").on("click", function() {
     event.preventDefault();
