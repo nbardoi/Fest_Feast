@@ -1,7 +1,7 @@
 var zip;
 var latResults = 0;
 var lngResults = 0;
-$("button").on("click", function() {
+$("#button").on("click", function() {
     event.preventDefault();
 
     //get number value from input
@@ -25,3 +25,5 @@ $("button").on("click", function() {
 
     });
 });
+console.log(latResults);
+console.log(lngResults);
