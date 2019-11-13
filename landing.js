@@ -25,5 +25,3 @@ $("button").on("click", function() {
 
     });
 });
-console.log(latResults);
-console.log(lngResults);
