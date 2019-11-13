@@ -1,11 +1,11 @@
 var zip;
-var latResults;
-var lanResults;
+var latResults = 0;
+var lngResults = 0;
 $("button").on("click", function() {
     event.preventDefault();
 
     //get number value from input
-    var zip= $("#zip-input").val();
+    zip = $("#zip-input").val();
     console.log(zip);
 
     //
@@ -17,11 +17,13 @@ $("button").on("click", function() {
     method: "GET"
   })
     .then(function(response) {
-        //console.log(response);
-        var latResults = response.results["0"].locations["0"].latLng.lat;
-        var lngResults = response.results["0"].locations["0"].latLng.lng;
+        console.log(response);
+        latResults = response.results["0"].locations["0"].latLng.lat;
+        lngResults = response.results["0"].locations["0"].latLng.lng;
         console.log(lngResults);
         console.log(latResults);
 
     });
 });
+console.log(latResults);
+console.log(lngResults);
