@@ -20,9 +20,9 @@ var firebaseConfig = {
     event.preventDefault();
     
     //get number value from input
-    zip = $("#zip - input").val();
+    zip = $("#zip-input").val();
     console.log(zip);
-    $("#zip - input").val("");
+    $("#zip-input").val("");
   
     var queryURL = "https://www.mapquestapi.com/geocoding/v1/address?key=OBoNOwnKwrAtuAq41mWwlOIvwGOj1mSV&inFormat=kvp&outFormat=json&location=" + zip + "&thumbMaps=false";
       // Performing an AJAX request with the queryURL
