@@ -46,7 +46,7 @@ $("#fest-search").on("click", function () {
   event.preventDefault();
     
   //get number value from input
-  zip = $("#zip - input").val();
+  zip = $("#zip - input");
   console.log(zip);
   $("#zip - input").val("");
 
