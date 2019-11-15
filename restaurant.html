@@ -9,6 +9,9 @@
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-app.js"></script>
     <script src="https://www.gstatic.com/firebasejs/7.2.3/firebase-database.js"></script>
 
+    <link href="https://fonts.googleapis.com/css?family=Bebas+Neue|Teko&display=swap&subset=latin-ext" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="restaurant.css">
     <link rel="stylesheet" href="https://dhbhdrzi4tiry.cloudfront.net/cdn/sites/foundation.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -22,11 +25,12 @@
 <div class="top-bar" id="restaurantMenu">
 <div class="top-bar-left">
 <ul class="menu" data-responsive-menu="accordion">
-<li class="menu-text">FEAST</li>
+<li class="menu-text" id="feast">FEAST</li>
 </ul>
 </div>
 <div class="top-bar-right">
 <ul class="menu">
+<li><a class="button" id="events" href="events_page.html">Look for Events!</a></li>
 <li><a class="button" id="zip" href="index.html">Change Zip Code</a></li>
 </ul>
 </div>
@@ -34,9 +38,9 @@
 
 <br>
 <div class="row">
-<div class="medium-7 large-5 columns">
-<h1>Food is Our Common Ground, a Universal Experience</h1>
-<p class="subheader">“First we eat, then we do everything else.” – M.F.K. Fisher</p>
+<div class="medium-7 large-5 columns" id="quotes">
+<h1 id="quote1">Food is Our Common Ground, a Universal Experience</h1>
+<p class="subheader" id="quote2">“First we eat, then we do everything else.” – M.F.K. Fisher</p>
 </div>
 <div class="show-for-large large-4 columns">
 <img src="https://eatforum.org/content/uploads/2018/05/table_with_food_top_view_900x700.jpg" alt="picture of food">
@@ -45,10 +49,10 @@
 <div class="callout secondary">
 <form>
 <div class="row">
-<div class="small-12 columns">
-<label>Search
+<div class="small-12 columns" id="search_area">
+<label id="search-text">Search
 <input type="text" id="search-input" placeholder="Search for restaurants or cuisines...">
- <input id="search" type="submit" value="Search Now!" class="btn btn-info">
+ <input id="search" type="submit" value="Search Now!" class="button">
 </label>
 
 </div>
@@ -61,22 +65,22 @@
 <hr>
 </div>
 <div class="row column">
-<p class="lead">Results</p>
+<h3 id="results"></h3>
 </div>
 <div class="row small-up-1 medium-up-2 large-up-3" id="restaurants-div">
 
 </div>
 <footer>
-<div class="row expanded callout secondary">
+<div class="row expanded callout secondary" id="footer">
 
 <div class="icon-bar">
-        <a href="#" class="facebook"><i class="fa fa-facebook"></i></a>
-        <a href="#" class="twitter"><i class="fa fa-twitter"></i></a>
-        <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
-        <a href="#" class="pinterest"><i class="fa fa-pinterest"></i></a>
-        <a href="#" class="google"><i class="fa fa-google"></i></a>
-        <a href="#" class="linkedin"><i class="fa fa-linkedin"></i></a>
-        <a href="#" class="youtube"><i class="fa fa-youtube"></i></a>
+        <a href="https://www.facebook.com" class="facebook"><i class="fa fa-facebook"></i></a>
+        <a href="https://www.twitter.com" class="twitter"><i class="fa fa-twitter"></i></a>
+        <a href="https://www.instagram.com" class="instagram"><i class="fa fa-instagram"></i></a>
+        <a href="https://www.pinterest.com" class="pinterest"><i class="fa fa-pinterest"></i></a>
+        <a href="https://www.google.com" class="google"><i class="fa fa-google"></i></a>
+        <a href="https://www.linkedin.com" class="linkedin"><i class="fa fa-linkedin"></i></a>
+        <a href="https://www.youtube.com" class="youtube"><i class="fa fa-youtube"></i></a>
 </div>
 </div>
 </footer>
