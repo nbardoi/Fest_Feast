@@ -1,12 +1,12 @@
 var firebaseConfig = {
-    apiKey: "AIzaSyARc2BoDAwXfBOGquZA2fajsAOeOLp8CTg",
-    authDomain: "new-member - a5313.firebaseapp.com",
-    databaseURL: "https://new-member-a5313.firebaseio.com",
-      projectId: "new-member - a5313",
-    storageBucket: "new-member - a5313.appspot.com",
-    messagingSenderId: "400495999207",
-    appId: "1: 400495999207: web: 9ea3589de3114bb4694a42",
-    measurementId: "G- XBZFDJJ4K0"
+    apiKey:"AIzaSyARc2BoDAwXfBOGquZA2fajsAOeOLp8CTg",
+    authDomain:"new-member-a5313.firebaseapp.com",
+    databaseURL:"https://new-member-a5313.firebaseio.com",
+      projectId:"new-member-a5313",
+    storageBucket:"new-member-a5313.appspot.com",
+    messagingSenderId:"400495999207",
+    appId:"1:400495999207:web:9ea3589de3114bb4694a42",
+    measurementId:"G-XBZFDJJ4K0"
   };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
@@ -18,9 +18,9 @@ $("#feast-search").on("click", function () {
   event.preventDefault();
     
   //get number value from input
-  zip = $("#zip - input").val();
+  zip = $("#zip-input").val().trim();
   console.log(zip);
-  $("#zip - input").val("");
+  $("#zip-input").val("");
   
   var queryURL = "https://www.mapquestapi.com/geocoding/v1/address?key=OBoNOwnKwrAtuAq41mWwlOIvwGOj1mSV&inFormat=kvp&outFormat=json&location=" + zip + "&thumbMaps=false";
     // Performing an AJAX request with the queryURL
@@ -46,9 +46,9 @@ $("#fest-search").on("click", function () {
   event.preventDefault();
     
   //get number value from input
-  zip = $("#zip - input");
+  zip = $("#zip-input").val().trim();
   console.log(zip);
-  $("#zip - input").val("");
+  $("#zip-input").val("");
 
   var queryURL = "https://www.mapquestapi.com/geocoding/v1/address?key=OBoNOwnKwrAtuAq41mWwlOIvwGOj1mSV&inFormat=kvp&outFormat=json&location=" + zip + "&thumbMaps=false";
     // Performing an AJAX request with the queryURL
