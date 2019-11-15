@@ -18,7 +18,7 @@ var firebaseConfig = {
     event.preventDefault();
     
     //get number value from input
-    var zip = $("#zip - input").val();
+    zip = $("#zip - input").val();
     console.log(zip);
     $("#zip - input").val("");
   
@@ -35,6 +35,7 @@ var firebaseConfig = {
         console.log(lngResults);
         console.log(latResults);
         database.ref().push({
+        zip: zip,
         latResults: latResults,
         lngResults: lngResults
         });
