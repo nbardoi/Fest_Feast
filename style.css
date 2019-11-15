@@ -46,4 +46,9 @@
       top: 20%;
       padding: 5%;
   }
-  
+input {
+ max-width: 400px;
+}
+button {
+  padding: 10%;
+}
