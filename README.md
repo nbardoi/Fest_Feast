@@ -18,4 +18,4 @@ Search for events or food in one place with the help of the Fest & Feast APP. No
 - Firebase Database
 
 ### Presentation Link
-https://drive.google.com/file/d/1Q4oSrVIi8oWmWA7TIxtCI4wgI3xtBkyV/view?usp=sharing
+https://docs.google.com/presentation/d/1UpgJIZF3yHdeUWJrkWYkZt_aQC1o8xQQsxCMP_SGwng/edit?usp=sharing
