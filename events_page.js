@@ -1,3 +1,17 @@
+var firebaseConfig = {
+    apiKey:"AIzaSyARc2BoDAwXfBOGquZA2fajsAOeOLp8CTg",
+    authDomain:"new-member-a5313.firebaseapp.com",
+    databaseURL:"https://new-member-a5313.firebaseio.com",
+    projectId:"new-member-a5313",
+    storageBucket:"new-member-a5313.appspot.com",
+    messagingSenderId:"400495999207",
+    appId:"1:400495999207:web:9ea3589de3114bb4694a42",
+    measurementId:"G-XBZFDJJ4K0"
+  };
+
+firebase.initializeApp(firebaseConfig);
+var database = firebase.database();
+
 $(".lead").hide();
 
 var lat = "";
@@ -35,12 +49,15 @@ $("#search").on("click", function(e) {
         
         $("#search-input").val("");
     
-        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey=ML6a8XQhSfo7pMxWI2w4XrqUeERBnspS&q=" + search + "&postalCode=" + zip + "&size=9";
+        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?q=" + search + "&lat=" + lat + "&lon=" + lon + "&zip=" + zip + "&count=12";
 
         
         $.ajax({
             url: queryURL,
             method: 'GET',
+            dataType: 'json',
+            headers: {
+                 'user-key':"ML6a8XQhSfo7pMxWI2w4XrqUeERBnspS",
                 error: function(xhr, status, err) {
                  }
             },
