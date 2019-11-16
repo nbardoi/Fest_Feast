@@ -39,7 +39,7 @@ $("#search").on("click", function(e) {
         $("#search-input").val("");
         var apikey = "ML6a8XQhSfo7pMxWI2w4XrqUeERBnspS";
         // var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey="+apikey+"&q=" + search + "&genre" + gen + "&lat=" + lat + "&lon=" + lon + "&zip=" + zip + "&count=12";
-        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey="+apikey+"&q=" + search  + "&lat=" + lat + "&lon=" + lon + "&zip=" + zip + "&count=12";
+        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey="+apikey+"&q=" + search &postalCode=" + zip + "&count=9";
 
         queryURL = 'https://cors-anywhere.herokuapp.com/'+queryURL;
         $.ajax({
