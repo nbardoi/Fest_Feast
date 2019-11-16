@@ -37,8 +37,9 @@ database.ref().on("child_added", function(snapshot) {
 });
 
 
-$("#search").on("click", function() {
-    event.preventDefault();
+$("#search").on("click", function(e) {
+    e.preventDefault();
+    
 
     $("#events-div").empty();
 
