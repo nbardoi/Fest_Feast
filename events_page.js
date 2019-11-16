@@ -17,12 +17,17 @@ $(".lead").hide();
 var lat = "";
 var lon = "";
 var zip = "";
+// var gen = "";
+var times = "";
+var phone_numbers = "";
+var address = "";
+
 
 database.ref().on("child_added", function(snapshot) {
 
     var sv = snapshot.val();
     zip = sv.zip;
-    console.log(zip);
+    console.log("zip: " + zip);
 
 
     lat = sv.latResults
@@ -39,8 +44,6 @@ database.ref().on("child_added", function(snapshot) {
 
 $("#search").on("click", function(e) {
     e.preventDefault();
-    
-
     $("#events-div").empty();
 
         var search = $("#search-input").val().trim();
@@ -48,56 +51,67 @@ $("#search").on("click", function(e) {
         
         
         $("#search-input").val("");
-    
-        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?q=" + search + "&lat=" + lat + "&lon=" + lon + "&zip=" + zip + "&count=12";
+        var apikey = "ML6a8XQhSfo7pMxWI2w4XrqUeERBnspS";
+        // var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey="+apikey+"&q=" + search + "&genre" + gen + "&lat=" + lat + "&lon=" + lon + "&zip=" + zip + "&count=12";
+        var queryURL = "https://app.ticketmaster.com/discovery/v2/events.json?apikey="+apikey+"&q=" + search  + "&lat=" + lat + "&lon=" + lon + "&zip=" + zip + "&count=12";
 
-        
+        queryURL = 'https://cors-anywhere.herokuapp.com/'+queryURL;
         $.ajax({
             url: queryURL,
             method: 'GET',
-            dataType: 'json',
-            headers: {
-                 'user-key':"ML6a8XQhSfo7pMxWI2w4XrqUeERBnspS",
-                error: function(xhr, status, err) {
-                 }
-            },
+            // dataType: 'json',
+            // headers: {
+            //      'user-key':"ML6a8XQhSfo7pMxWI2w4XrqUeERBnspS",
+            //      contentType: 'application/json; charset=utf-8',
+            //      "x-requested-with": "xhr"
+            //     // error: function(xhr, status, err) {
+            //     //  }
+            // },
 
             
-            contentType: 'application/json; charset=utf-8',
         })   .then(function(response) {
                 
 
-                var results = response.events;
+                var results = response._embedded.events;
                 console.log(response);
                 
                 for (var i = 0; i < results.length; i++) {
                 $(".lead").show();
+                
                 var columnDiv = $("<div>").addClass("column");
                 var calloutDiv = $("<div>").addClass("callout");
-                var show_name = $("<p>").text(results[i].show.name).addClass("show_name");
-                var genres = $("<p>").text("Genres: " + results[i].event.genre).addClass("genres");
-                var times = $("<p>").text("Times: " + results[i].event.times).addClass("times");
-                var phone_Number = $("<p>").text("Phone Number: " + results[i].event.phone_numbers).addClass("phone_Number");
-                var address = $("<p>").text("Address: " + results[i].event.location.address).addClass("address");
+                var show_name = $("<p>").text(results[i].name).addClass("show_name");
+                var genres = $("<p>").text("Genres: " + results[i].genre).addClass("genres");
+                var times = $("<p>").text("Times: " + results[i].times).addClass("times");
+                var phone_Number = $("<p>").text("Phone Number: " + results[i].phone_numbers).addClass("phone_Number");
+                var address = $("<p>").text("Address: " + results[i]._embedded.venues[0].name).addClass("address");
                 var show_Image = $("<img>");
                 var photo_URL = "";
 
-                if (results[i].event.photo_count == "0") {
+                var wellSection = $('<div>');
+                wellSection.addClass("well");
+                wellSection.attr('id', 'eventInfo-' + i);
+                $('#wellSection').append(wellSection);
+
+                $("#wellSection-" + i).append("<p>").text("Genres: " + results[i].genre).addClass("genres");
+                
+
+                if (results[i].photo_count == "0") {
                     photo_URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZdPOJK1WQchVXd5LVNhuRvez1arFJCApbEc6O27wWFD5PpegG&s";
                     show_Image.attr("alt", "NO PHOTOS FOUND");
                 }else {
-                    photo_URL = results[i].event.photos[0].photo.url
+                    photo_URL = results[i].images[0].url;
                 };
                 
                 show_Image.attr("src", photo_URL);
                 columnDiv.append(calloutDiv);
                 calloutDiv.append(show_name);
                 calloutDiv.append(show_Image);
-                calloutDiv.append(genres);
-                calloutDiv.append(costForTwo);
+                // calloutDiv.append(genres);
+                // calloutDiv.append(costForTwo);
                 calloutDiv.append(address);
-                calloutDiv.append(times);
-                calloutDiv.append(phone_Number);
+                // calloutDiv.append(times);
+                // calloutDiv.append(phone_Number);
 
 
                 $("#events-div").append(columnDiv);
