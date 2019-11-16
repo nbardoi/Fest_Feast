@@ -1,17 +1,3 @@
-var firebaseConfig = {
-    apiKey:"AIzaSyARc2BoDAwXfBOGquZA2fajsAOeOLp8CTg",
-    authDomain:"new-member-a5313.firebaseapp.com",
-    databaseURL:"https://new-member-a5313.firebaseio.com",
-    projectId:"new-member-a5313",
-    storageBucket:"new-member-a5313.appspot.com",
-    messagingSenderId:"400495999207",
-    appId:"1:400495999207:web:9ea3589de3114bb4694a42",
-    measurementId:"G-XBZFDJJ4K0"
-  };
-
-firebase.initializeApp(firebaseConfig);
-var database = firebase.database();
-
 $(".lead").hide();
 
 var lat = "";
