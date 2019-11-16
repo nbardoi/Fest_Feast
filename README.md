@@ -7,6 +7,7 @@ Search for events or food in one place with the help of the Fest & Feast APP. No
 - HTML
 - CSS
 - Javascript
+- jQuery
 - Zurb Foundation HTML Templates
 - Bootstrap Framework
 - AJAX
