@@ -4,7 +4,7 @@
 Search for events or food in one place with the help of the Fest & Feast APP. No need to switch between sites anymore as Fest & Feast gives you the convenience to search for events and food in one place!
 
 ## Demo
-FEST & FEAST is depolyed here[https://nbardoi.github.io/Fest_Feast].
+FEST & FEAST is depolyed [here](https://nbardoi.github.io/Fest_Feast).
 
 ## Instructions
 1. Open your terminal such as Bash.
